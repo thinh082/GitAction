@@ -1,18 +1,19 @@
-name: Jules AI Auto File Generator
+name: Hoc GitHub Actions Cung Thinh
+
 on:
   push:
-    branches: [main, master]
+    branches: ["main"] # Có dấu cách sau dấu hai chấm và dấu ngoặc vuông
 
 jobs:
-  jules-agent-task:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
+  job_kiem_tra_code:
+    runs-on: ubuntu-latest # Thụt vào 2 dấu cách so với chữ jobs
+
+    steps: # Thụt vào 2 dấu cách so với chữ job_kiem_tra_code
+      - name: Lay code ve may ao
         uses: actions/checkout@v4
 
-      - name: Trigger Jules to Create Random File
-        run: |
-          echo "Jules is starting a new session to generate a random file..."
-          # Chúng ta thay đổi câu lệnh prompt gửi cho Jules
-          # Lưu ý: Lệnh này yêu cầu bạn đã setup JULES_TOKEN hoặc GitHub App cho repo
-          jules remote new --session "Create a new random .md file in the root directory with some creative content, then submit a Pull Request."
+      - name: Chay lenh thong bao
+        run: echo "Chao Thinh! GitHub dang kiem tra code cho ban..."
+
+      - name: Kiem tra phien ban .NET
+        run: dotnet --version
