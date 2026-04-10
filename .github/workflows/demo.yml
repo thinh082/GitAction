@@ -1,0 +1,21 @@
+#1 Tên của quy trình
+name: Học github actions
+#2 Khi chạy chạy
+on:
+  push: branches:[main] # chạy khi push lên main
+#3 công việc cần làm
+jobs:
+  job_kiem_tra:
+  # chạy trên ubuntu
+  runs-on: ubuntu-latest
+  #4 các bước thực hiện
+  steps:
+    # Bước A lấy code từ repo
+    - name: Lay code ve may ao
+      users: actions/checkout@v4
+    # Bước B: Chạy một lệnh shell cơ bản
+    - name: chay lenh thong bao
+      run: echo "Chao Thinh! Github dang kiem tra code cua ban...."
+    # Bước C: Ví dụ kiểm tra phiên bản .Net
+    - name: Kiem tra phien ban .net version
+      run: dotnet --version
